@@ -20,4 +20,4 @@ OpenCV
 ``` 
 python3 infer.py my_random_image.jpeg
 ```
-> [download pretrained model tf2.2](None)
+> [download pretrained model tf2.2](https://drive.google.com/file/d/1KBc9HcukMtAHem53JBgEEGWXe8FsuUBB/view?usp=sharing)

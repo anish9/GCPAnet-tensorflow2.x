@@ -13,7 +13,7 @@ Python3.6
 OpenCV
 ```
 ### Some Results
-![alt_text](https://github.com/anish9/GCPAnet-tensorflow2.2/blob/master/asset/tf2.2_exp.png)
+![alt_text](https://github.com/anish9/GCPAnet-tensorflow2.2/blob/master/asset/tf2.2_exps.png)
 
 ### Inference
 > run infer.py loading the pretrained model 

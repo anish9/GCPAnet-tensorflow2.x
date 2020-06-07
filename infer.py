@@ -14,7 +14,7 @@ def predict(rgb):
 	image      = np.expand_dims(image,axis=0)/ 255.
 	pred_chart = model.predict(image)
 	prediction = pred_chart[3][0,:,:,0]
-	cv2.imshow(prediction)
+	cv2.imshow("pred",prediction)
 	cv2.waitKey(0)
 
 

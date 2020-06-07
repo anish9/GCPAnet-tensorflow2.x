@@ -1,4 +1,4 @@
-""" default channel last and learning rate warmup using cosine annealing used default"""
+""" default channel last and learning rate annealing used default"""
 
 config_map = {"data_root"        : "/home/anish/anish/GCPAnet/DUT_BENCH/",
        	      "epochs"           : 30,

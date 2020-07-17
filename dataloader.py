@@ -52,16 +52,22 @@ def change_il(image):
     return im_proc 
 
 
-def resize_pad(image,mask,H,W):
-    m = 26
-    n = 52
-    o = 104
-    p = 416
-    im = tf.image.resize_with_pad(image,H,W)
-    ma1 = tf.image.resize_with_pad(mask,m,m)
-    ma2 = tf.image.resize_with_pad(mask,n,n)
-    ma3 = tf.image.resize_with_pad(mask,o,o)
-    ma4 = tf.image.resize_with_pad(mask,p,p)
+def resize_pad(image,mask,H,W,qs1=H,qs2=W):
+    m1 = qs1//16
+    n1 = qs1//8
+    o1 = qs1//4
+    p1 = qs1
+    
+    m2 = qs2//16
+    n2 = qs2//8
+    o2 = qs2//4
+    p2 = qs2
+    
+    im = tf.image.resize_with_pad(image,target_height=H,target_width=W)
+    ma1 = tf.image.resize_with_pad(mask,target_height=m1,target_width=m2)
+    ma2 = tf.image.resize_with_pad(mask,target_height=n1,target_width=n2)
+    ma3 = tf.image.resize_with_pad(mask,target_height=o1,target_width=o2)
+    ma4 = tf.image.resize_with_pad(mask,target_height=p1,target_width=p2)
     return im,(ma1,ma2,ma3,ma4)
 
 

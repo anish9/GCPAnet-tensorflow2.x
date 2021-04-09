@@ -100,7 +100,7 @@ def valgen(ima,mas):
     i,(m1,m2,m3,m4) = resize_pad(i,m,H,W)
     return i,(m1,m2,m3,m4)
 
-BUFFER = len(TRAIN_IMAGES)
+train_list = len(TRAIN_IMAGES)
 val_list = len(VAL_IMAGES)
 BATCH_SIZE=config_map["batch"]
 TRAIN = tf.data.Dataset.from_tensor_slices((TRAIN_IMAGES,TRAIN_MASKS))
@@ -110,5 +110,5 @@ TRAIN = TRAIN.map(traingen,num_parallel_calls=tf.data.experimental.AUTOTUNE)
 VAL = VAL.map(valgen,num_parallel_calls=tf.data.experimental.AUTOTUNE)
 train_ = TRAIN.batch(BATCH_SIZE,drop_remainder=True).shuffle(40).repeat()
 val_ = VAL.batch(BATCH_SIZE,drop_remainder=True).shuffle(40).repeat()
-ts = BUFFER//BATCH_SIZE
+ts = train_list//BATCH_SIZE
 vs = val_list//BATCH_SIZE

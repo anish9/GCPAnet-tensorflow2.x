@@ -1,11 +1,19 @@
+from tensorflow.compat.v1 import ConfigProto
+from tensorflow.compat.v1 import InteractiveSession
+
+config = ConfigProto()
+config.gpu_options.allow_growth = True
+session = InteractiveSession(config=config)
+
 from layers import *
+from conf import *
 import numpy as np
 import cv2
 import sys
 
 img_rgb  = sys.argv[1]
-model = GCPA()
-model.load_weights("dut_omron.h5")
+model = GCPA(config_map["backbone"])
+model.load_weights("save_ckp.h5")
 
 
 def predict(rgb):

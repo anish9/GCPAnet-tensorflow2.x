@@ -97,8 +97,8 @@ def valgen(ima,mas):
     i,(m1,m2,m3,m4) = resize_pad(i,m,H,W)
     return i,(m1,m2,m3,m4)
 
-train_list     = len(TRAIN_IMAGES)
-val_list       = len(VAL_IMAGES)
+train_list     = len(train_image_path)
+val_list       = len(val_image_path)
 BATCH_SIZE     = config_map["batch"]
 
 
@@ -106,8 +106,8 @@ ts = train_list//BATCH_SIZE
 vs = val_list//BATCH_SIZE
 
 
-TRAIN      = tf.data.Dataset.from_tensor_slices((TRAIN_IMAGES,TRAIN_MASKS))
-VAL        = tf.data.Dataset.from_tensor_slices((VAL_IMAGES,VAL_MASKS))
+TRAIN      = tf.data.Dataset.from_tensor_slices((train_image_path,train_mask_path))
+VAL        = tf.data.Dataset.from_tensor_slices((val_image_path,val_mask_path))
 
 TRAIN  = TRAIN.map(traingen,num_parallel_calls=tf.data.experimental.AUTOTUNE)
 VAL    = VAL.map(valgen,num_parallel_calls=tf.data.experimental.AUTOTUNE)

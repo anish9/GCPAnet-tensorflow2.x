@@ -1,13 +1,13 @@
 """ default channel last and learning rate annealing used default"""
 
-config_map = {"data_root"        : "/home/anish/anish/datas/DUT/",
+config_map = {"data_root"        : "/home/anish/anish/GCPAnet/DUT_BENCH/",
               "backbone"         : "res50v2",
-       	      "epochs"           : 25,
+       	      "epochs"           : 30,
        	      "warmup"           : 5,
-       	      "learning_rate"    : 1.21e-4,
+       	      "learning_rate"    : 1e-5,
        	      "dim"              : 416, 
-              "crop_patch_interval" :[310,400],
-       	      "batch"            : 6,
+              "crop_patch_interval" :[280,400],
+       	      "batch"            : 8,
        	      "tbl"              : "./logs"
        	      }
 

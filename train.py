@@ -25,8 +25,8 @@ file_writer.set_as_default()
 
 MOD = GCPA(config_map["backbone"])
 MOD.compile(optimizer="Nadam",loss=losses,loss_weights=weights,metrics=["acc"])
-call_list = [TensorBoard(logdir),ModelCheckpoint("save_ckp.h5",monitor="val_loss",save_weights_only=True,verbose=1,mode="min"),
-             EarlyStopping(monitor="val_loss",mode="min",verbose=1,patience=9),sched]
+call_list = [TensorBoard(logdir),ModelCheckpoint("save_ckp.h5",monitor="val_loss",save_weights_only=True,save_best_only=True,verbose=1,mode="min"),
+             EarlyStopping(monitor="val_loss",mode="min",verbose=1,patience=5),sched]
 
 print("Training_initialized ...")
 print("--------------------------")

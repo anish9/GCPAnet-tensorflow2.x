@@ -6,8 +6,8 @@ from conf import *
 
 TRAIN_IMAGES = sorted(glob(config_map["data_root"]+"/train/image/*"))
 TRAIN_MASKS  = sorted(glob(config_map["data_root"]+"/train/mask/*"))
-VAL_IMAGES  = sorted(glob(config_map["data_root"]+"/train/image/*"))
-VAL_MASKS   = sorted(glob(config_map["data_root"]+"/train/mask/*"))
+VAL_IMAGES  = sorted(glob(config_map["data_root"]+"/val/image/*"))
+VAL_MASKS   = sorted(glob(config_map["data_root"]+"/val/mask/*"))
 
 
 H,W = config_map["dim"],config_map["dim"]
